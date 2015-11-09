@@ -1,0 +1,13 @@
+<img class="avatar" src="/images/avatar.jpg" />
+
+<div class="info">
+
+  {{#link-to 'user' chirp.user.username}}
+    {{chirp.user.username}}
+  {{/link-to}}
+
+  <time>{{moment-from-now chirp.createdAt}}</time>
+
+  <p>{{chirp.text}}</p>
+  
+</div>

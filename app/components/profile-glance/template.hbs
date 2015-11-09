@@ -1,0 +1,21 @@
+<div class="cover-photo"></div>
+
+<img class="avatar" src="/images/avatar.jpg" />
+{{#link-to "user" user.username}}
+  {{user.username}} <!-- here -->
+{{/link-to}}
+
+<ul class="profile-stats">
+  <li>
+    <h4>Chirps</h4>
+    <p>{{user.numberOfChirps}}</p> <!-- ...here -->
+  </li>
+  <li>
+    <h4>Following</h4>
+    <p>{{user.numberOfFollowing}}</p> <!-- ...here -->
+  </li>
+  <li>
+    <h4>Followers</h4>
+    <p>{{user.numberOfFollowers}}</p> <!-- ...and here -->
+  </li>
+</ul>

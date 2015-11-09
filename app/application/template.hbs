@@ -1,0 +1,37 @@
+
+<header>
+  <div class="page-container">
+
+    <div class="logo"></div>
+
+    {{#if session.isAuthenticated}} <!-- New! -->
+      <nav>
+        {{#link-to "home"}}Home{{/link-to}}
+
+        {{#link-to "user" session.currentUser.username}}
+          <img class="avatar" src="/images/avatar.jpg" />
+          {{session.currentUser.username}}
+
+        {{/link-to}}
+
+        <button class="chirp" {{action "toggleComposeModal"}}>Chirp</button>
+
+      </nav>
+
+    {{/if}}
+
+  </div>
+</header>
+
+
+{{outlet}}
+
+{{#if showingComposeModal}}
+
+  {{#modal-dialog translucentOverlay=true close=(action 'toggleComposeModal')}}
+    
+    {{compose-modal dismiss=(action 'toggleComposeModal')}}  
+
+  {{/modal-dialog}}
+  
+{{/if}}
